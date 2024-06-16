@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count Down</title>
+    <style>
+          body{
+               background-image:url(https://2.bp.blogspot.com/-R4mTyiwzIh0/T78dIAW9dYI/AAAAAAAAEHQ/nRzF8fa3cYs/s1600/Hdhut.blogspot.com+%252831%2529.jpg);s);
+               background-size:cover;
+               background-repeat:no-repeat;
+               background-position:center;
+                   
+             }
+          h1{
+                font-size:50px;
+                text-align:center;
+                line-height:5;
+                color:white;  
+                }
+           h2{
+                font-size:30px;
+                text-align:center;
+                line-height:1;  
+                }
+                button{
+                  text-align: center;
+                  margin-left: 600px;
+                }
+          .center-container{
+                       display:flex; 
+                       justify-content:center;
+                       align-items:center;
+                       height:8vh;
+             }
+          
+          .center-form{
+                padding:20px;
+                border:1px;
+                width:300px;
+             }
+          .countdown {
+              font-size: 24px;
+              text-align: center;
+              margin: 20px;
+            }
+    </style>
+<script>
+  function startCountdown() {
+    var countDownDate = new Date().getTime() + (10 * 1000); // 10 seconds from now
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerHTML = seconds + "s";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  }
+</script>
+</head>
+<body>
+<h1>COMING SOON......!</h1>
+<h2><i>A way to discover new things to do.</i></h2>
+<div class="center-container">
+<form class="center-form">
+<label for="Email">Email</label><br>
+<input type="Email" id="Email" placeholder="enter your mail" name="Email" values=" "><br>
+<br>
+<input type="Submit" value="Submit">
+</div>
+</form>
+<div class="countdown">
+  <p>Countdown Timer:</p>
+  <p id="timer">Loading...</p>
+</div>
+
+<button onclick="startCountdown()">Start Countdown</button>
+
+
+</body>
+</html>
